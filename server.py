@@ -1,19 +1,5 @@
 #!/usr/bin/env python2.7
 
-"""
-Columbia's COMS W4111.001 Introduction to Databases
-Example Webserver
-
-To run locally:
-
-    python server.py
-
-Go to http://localhost:8111 in your browser.
-
-A debugger such as "pdb" may be helpful for debugging.
-Read about it online.
-"""
-
 import os
 from sqlalchemy import *
 from sqlalchemy.pool import NullPool
@@ -34,7 +20,7 @@ app = Flask(__name__, template_folder=tmpl_dir)
 #
 #     DATABASEURI = "postgresql://gravano:foobar@w4111a.eastus.cloudapp.azure.com/proj1part2"
 #
-DATABASEURI = "postgresql://hj2447:8933@w4111vm.eastus.cloudapp.azure.com/w4111"
+DATABASEURI = ""
 
 
 #
