@@ -1,0 +1,114 @@
+<html>
+  <style>
+    body{ 
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+
+
+<body>
+
+<div class="container">
+  <h2>Welcome {{att}} !</h2>
+
+ <p>Below is your membership status:</p>
+  
+<table border="1">
+  <tr>
+  {% for m in att2 %}
+    <th>{{m}}</th>
+    {% endfor %}
+  </tr>
+  {% for n in status %}
+  <tr>
+  {% for m in n %}
+    <td>{{m}}</td>
+    {% endfor %}
+  </tr>
+  {% endfor %}
+
+</table>
+  <p align="right"><a href="logout">Log out</a></p>
+  <hr width=100%>
+</div>
+
+<form method="POST" action="/customer_location">
+<p>Please choose your target location: 
+    <select class="ui search dropdown" name="location">
+      <option value="111 Amsterdam">111 Amsterdam</option>
+      <option value="159 Amsterdam">159 Amsterdam</option>
+      <option value="219 Amsterdam">219 Amsterdam</option>
+      <option value="301 Amsterdam">301 Amsterdam</option>
+      <option value="392 Amsterdam">392 Amsterdam</option>
+      <option value="215 BroadWay">215 BroadWay</option>
+      <option value="463 BroadWay">463 BroadWay</option>
+      <option value="1643 BroadWay">1643 BroadWay</option>
+      <option value="2314 BroadWay">2314 BroadWay</option>
+      <option value="3221 BroadWay">3221 BroadWay</option>
+    </select>
+    <input type="submit" value="search">
+</p>
+</form>
+
+<form method="POST" action="/customer_number">
+<p>Enter your transaction number for details: <input type="text" name="number"><input type="submit" value="search"></p>
+</form>
+
+<form method="POST" action="/customer_history">
+<p>Please type in check_in_date: 
+    <select class="ui search dropdown" name="checkin">
+      <option value=""></option>
+      <option value="2016-07-14">2016-07-14</option>
+      <option value="2016-07-15">2016-07-15</option>
+      <option value="2016-07-21">2016-07-21</option>
+      <option value="2016-07-25">2016-07-25</option>
+      <option value="2016-07-30">2016-07-30</option>
+      <option value="2016-07-31">2016-07-31</option>
+      <option value="2016-08-02">2016-08-02</option>
+      <option value="2016-08-03">2016-08-03</option>
+      <option value="2016-08-05">2016-08-05</option>
+      <option value="2016-08-07">2016-08-07</option>
+      <option value="2016-08-08">2016-08-08</option>
+    </select>
+</p>
+
+<p>Please type in check_out_date: 
+    <select class="ui search dropdown" name="checkout">
+      <option value=""></option>
+      <option value="2016-07-15">2016-07-15</option>
+      <option value="2016-07-17">2016-07-17</option>
+      <option value="2016-07-22">2016-07-22</option>
+      <option value="2016-07-27">2016-07-27</option>
+      <option value="2016-08-01">2016-08-01</option>
+      <option value="2016-08-04">2016-08-04</option>
+      <option value="2016-08-06">2016-08-06</option>
+      <option value="2016-08-09">2016-08-09</option>
+    </select>
+   <input type="submit" value="Search">
+</p>
+</form>
+
+<table border="1">
+  <tr>
+  {% for m in rv %}
+    <th>{{m}}</th>
+    {% endfor %}
+  </tr>
+  {% for n in data %}
+  <tr>
+  {% for m in n %}
+    <td>{{m}}</td>
+    {% endfor %}
+  </tr>
+  {% endfor %}
+
+</table>
+
+
+
+
+</body>
+
+
+</html>
