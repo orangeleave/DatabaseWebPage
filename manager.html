@@ -1,0 +1,114 @@
+<html>
+  <style>
+    body{ 
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+
+
+<body>
+
+<h2> Search for the information of customers: </h2>
+<form method="POST" action="/manager_dis">
+<p>Select the target discount of membership: 
+    <select class="ui search dropdown" name="dis">
+      <option value="0.5">0.5</option>
+      <option value="0.6">0.6</option>
+      <option value="0.7">0.7</option>
+      <option value="0.8">0.8</option>
+      <option value="0.9">0.9</option>
+    </select>
+    <input type="submit" value="search">
+</p>
+</form>
+<form method="POST" action="/manager_rtype">
+<p>Select the target room type: 
+    <select class="ui search dropdown" name="rtype">
+      <option value="single room">single</option>
+      <option value="presidential room">presidential</option>
+      <option value="double room">double</option>
+      <option value="standard room">standard</option>
+      <option value="family room">family</option>
+    </select>
+    <input type="submit" value="search">
+</p>
+</form>
+
+<h2> Search for customer's living history: </h2>
+<form method="POST" action="/manager_check">
+  <p>Please type in ssn number: 
+    <input type="text" name="ssn"> 
+  </p>
+
+<p>Please type in check_in_date: 
+    <select class="ui search dropdown" name="checkin">
+      <option value=""></option>
+      <option value="2016-07-14">2016-07-14</option>
+      <option value="2016-07-15">2016-07-15</option>
+      <option value="2016-07-21">2016-07-21</option>
+      <option value="2016-07-25">2016-07-25</option>
+      <option value="2016-07-30">2016-07-30</option>
+      <option value="2016-07-31">2016-07-31</option>
+      <option value="2016-08-02">2016-08-02</option>
+      <option value="2016-08-03">2016-08-03</option>
+      <option value="2016-08-05">2016-08-05</option>
+      <option value="2016-08-07">2016-08-07</option>
+      <option value="2016-08-08">2016-08-08</option>
+    </select>
+</p>
+
+<p>Please type in check_out_date: 
+    <select class="ui search dropdown" name="checkout">
+      <option value=""></option>
+      <option value="2016-07-15">2016-07-15</option>
+      <option value="2016-07-17">2016-07-17</option>
+      <option value="2016-07-22">2016-07-22</option>
+      <option value="2016-07-27">2016-07-27</option>
+      <option value="2016-08-01">2016-08-01</option>
+      <option value="2016-08-04">2016-08-04</option>
+      <option value="2016-08-06">2016-08-06</option>
+      <option value="2016-08-09">2016-08-09</option>
+    </select>
+   <input type="submit" value="Search">
+</p>
+</form>
+
+<h2> Search for the information of departments: </h2>
+<form method="POST" action="/manager_dept">
+<p>Select the target room type: 
+    <select class="ui search dropdown" name="dept">
+      <option value="HouseKeeping">House Keeping</option>
+      <option value="Security">Security</option>
+      <option value="FrontOffice">Front Office</option>
+      <option value="Accounting">Accounting</option>
+      <option value="FoodAndBeverage">Food and Beverage</option>
+      <option value="HumanResource">Human Resource</option>
+      <option value="IT">IT</option>
+      <option value="Engineering">Engineering</option>
+      <option value="Maintenance">Maintenance</option>
+      <option value="SalesAndMarketing">Sales and Marketing</option>
+    </select>
+    <input type="submit" value="search">
+</p>
+</form>
+
+<table border="1">
+  <tr>
+  {% for m in att %}
+    <th>{{m}}</th>
+  {% endfor %}
+  </tr>
+  {% for n in data %}
+  <tr>
+  {% for m in n %}
+    <td>{{m}}</td>
+    {% endfor %}
+  </tr>
+{% endfor %}
+</table>
+  <p align="right"><a href="logout">Log out</a></p>
+  <hr width=100%>
+</body>
+
+</html>
